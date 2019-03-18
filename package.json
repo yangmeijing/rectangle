@@ -4,14 +4,14 @@
   "description": "计算矩形的周长和面积",
   "main": "rectangle.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yangmeijing/rectangle.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/yangmeijing/rectangle/issues"
   },
@@ -22,5 +22,12 @@
     "grunt-contrib-less": "^2.0.0",
     "grunt-eslint": "^21.0.0",
     "grunt-htmlhint": "^0.9.13"
+  },
+  "dependencies": {
+    "grunt": "^1.0.3",
+    "grunt-htmlhint": "^0.9.13",
+    "grunt-contrib-csslint": "^2.0.0",
+    "grunt-contrib-less": "^2.0.0",
+    "grunt-eslint": "^21.0.0"
   }
 }
