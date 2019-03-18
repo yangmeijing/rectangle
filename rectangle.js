@@ -1,18 +1,20 @@
+/* global Rectangle: true */
 $(function(){
   var $width=$('#width'),
       $height=$('#length'),
       $btn=$('#btn'),
-      $per=$('#per'),
+      $per=$('#perimeter'),
       $area=$('#area');
 
   $btn.click(function(){
-    var w=Number($width.val()),
-        h=Number($height.val());
+    var w = $width.val(),
+        h = $height.val();        
 
-    var p=2*(w+h),
-        a=w*h;
-  
-    $per.val(p);
-    $area.val(a);
-  });
+    var r = new Rectangle(w, h);
+            
+
+    $per.val(r.perimeter());
+    $area.val(r.area());
+                          
+  });  
 });
