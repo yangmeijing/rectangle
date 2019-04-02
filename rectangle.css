@@ -1,13 +1,5 @@
-div {
-  font-size: 1.1em;   
-  margin: 50px auto;
-  width: 370px;
-
-} 
-
-
-input, label {
-  font-size: 1em;   
+input,label{
+  font-size:1em;
   margin: 5px 0;
   padding-left: 5px;    
 
@@ -20,4 +12,28 @@ span{
   margin-left: 63px;    
   width: 70px;
 
+}
+
+#width-validation,#length-validation{
+  color:red;
+  position:absolute;
+  right:350px;
+  height:25px;
+  width:200px;
+}
+#width-validation{
+  top:55px;
+}
+#height-validation{
+  top:90px;     
+}
+
+#main {
+  font-size: 1.1em;   
+  margin: 50px auto;
+  width: 370px;
+
 } 
+
+
+
