@@ -1,49 +1,16 @@
-/* global Rectangle,valid: true */
+/* global Rectangle: true */
 $(function(){
   var $width=$('#width'),
       $height=$('#length'),
-      $btn=$('#btn'),
+      $form=$('form'),
       $per=$('#perimeter'),
-      $area=$('#area'),
-      $widthValidation=$('#width-validation'),
-      $heightValidation=$('#length-validation');
-  $width.focusout(function(){
-    var result = valid($width.val());
-    console.log($width.val());
-    console.log(result);
-    if(!result.isOK){
-      $widthValidation.html('宽度'+result.reason);
-    }else{
-      $widthValidation.html('');
-    }
-  });
-  $height.focusout(function(){
-    console.log($height.val());
-    var result = valid($height.val());
-    if(!result.isOK){
-      $heightValidation.html('长度'+result.reason);
-    }else{
-      $heightValidation.html('');
-    }
-  });
+      $area=$('#area');
  
-  $btn.click(function(){
+  $form.submit(function(e){
+    e.preventDefault();//阻止表单提交时刷新
     var w = $width.val(),
         h = $height.val();        
-    var result = valid($width.val());
-    var validWidth = valid(w);
-    var validHeight = valid(h);
-
-
-    if(!validWidth.isOK){
-      $widthValidation.html('长度'+result.reason);
-      return;
-    }
-    if(!validHeight.isOK){
-      $heightValidation.html('宽度'+result.reason);
-      return;
-    }
-
+   
     var r = new Rectangle(w, h);
             
 
