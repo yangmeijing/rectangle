@@ -7,10 +7,23 @@ $(function(){
       $area=$('#area'),
       $widthValidation=$('#width-validation'),
       $heightValidation=$('#length-validation');
+
+  $width.keypress(function(e){
+    if(/[abcdf-zABCDF-Z`~!@#$%^&*()=_+[\]{}|;:'",<>\\]/.test(e.key)){
+      e.preventDefault();
+    }
+    if(e.key === '.'){
+      if(e.target.value === '') e.preventDefault();
+      if(e.target.value.indexOf('.') !== -1){
+        e.preventDefault();
+      }else{
+        if(e.target.selectionStart === 0 ) e.preventDefault();
+      }
+    }  
+  });
   $width.focusout(function(){
     var result = valid($width.val());
-    console.log($width.val());
-    console.log(result);
+   
     if(!result.isOK){
       $widthValidation.html('宽度'+result.reason);
     }else{
@@ -18,7 +31,7 @@ $(function(){
     }
   });
   $height.focusout(function(){
-    console.log($height.val());
+   
     var result = valid($height.val());
     if(!result.isOK){
       $heightValidation.html('长度'+result.reason);
